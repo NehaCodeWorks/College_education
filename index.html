@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>College Buddha - Find Over 4 Lakh Reviews in India</title>
+
+  <!-- Bootstrap 5 + Icons + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="top-strip"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <!-- Main navbar -->
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="#" class="brand">
+          <i class="bi bi-mortarboard-fill brand-icon"></i>
+          <span>College </span>
+        </a>
+
+        <form class="nav-search" onsubmit="return false;">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Search colleges, exams, courses...">
+        </form>
+
+        <div class="nav-actions">
+          <a href="#" class="nav-link-item"><i class="bi bi-pencil-square"></i> Write a Review</a>
+          <a href="#" class="nav-link-item"><i class="bi bi-list"></i> Explore</a>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <i class="bi bi-brightness-high"></i>
+          </button>
+          <a href="#" class="btn-counselling">Free Counselling</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Category strip -->
+    <div class="cat-strip">
+      <div class="container cat-inner">
+        <a href="#" class="cat-link"><i class="bi bi-arrow-right"></i> All Courses</a>
+        <a href="#" class="cat-link">B.Tech</a>
+        <a href="#" class="cat-link">MBA</a>
+        <!-- <a href="#" class="cat-link">M.Tech</a> -->
+        <!-- <a href="#" class="cat-link">MBBS</a> -->
+        <a href="#" class="cat-link">B.Com</a>
+        <a href="#" class="cat-link">B.Sc</a>
+        <a href="#" class="cat-link">BA</a>
+        <a href="#" class="cat-link">BBA</a>
+        <a href="#" class="cat-link">BCA</a>
+
+        <a href="#" class="cat-pill pill-purple">📝 Exams</a>
+        <!-- <a href="#" class="cat-pill pill-blue">💻 Online &amp; Distance</a> -->
+        <a href="#" class="cat-pill pill-green">⚖️ Compare</a>
+        <a href="#" class="cat-pill pill-orange">🎯 Predictor</a>
+        <a href="#" class="cat-pill pill-sky">NEW Course Finder</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content text-center">
+      <h1 class="hero-title">Find Over 4 Lakh Reviews in India</h1>
+      <p class="hero-sub">Verified reviews from real students. Make smarter college decisions today.</p>
+
+      <!-- Tabs -->
+      <div class="hero-tabs" id="heroTabs">
+        <button class="hero-tab active" data-type="colleges" data-placeholder="Search IIT Bombay...">🏛️ Colleges</button>
+        <button class="hero-tab" data-type="exams" data-placeholder="Search JEE Main...">📝 Exams</button>
+        <button class="hero-tab" data-type="courses" data-placeholder="Search B.Tech Computer Science...">📚 Courses</button>
+        <button class="hero-tab" data-type="predictor" data-placeholder="Enter your rank or percentile...">🎯 Predictor</button>
+      </div>
+
+      <!-- Search + dropdown -->
+      <div class="hero-search-wrap" id="searchWrap">
+        <div class="hero-search">
+          <i class="bi bi-search"></i>
+          <input type="text" id="heroInput" placeholder="Search IIT Bombay..." autocomplete="off">
+          <button class="btn-search" type="button">Search</button>
+        </div>
+
+        <div class="search-dropdown" id="searchDropdown">
+          <div class="dd-section" id="streamSection">
+            <div class="dd-label">🔥 POPULAR STREAMS</div>
+            <div class="dd-chips">
+              <a href="#" class="dd-chip">⚙️ Engineering</a>
+              <a href="#" class="dd-chip">📊 Management</a>
+              <!-- <a href="#" class="dd-chip">⚕️ Medical</a> -->
+            </div>
+          </div>
+
+          <div class="dd-section dd-featured">
+            <div class="dd-label">🏛️ FEATURED COLLEGES</div>
+            <ul class="dd-list" id="collegeList">
+              <!-- <li data-name="Andaman and Nicobar Islands Institute of Medical Sciences">
+                <div>
+                  <div class="dd-name">Andaman and Nicobar Islands Institute of Medical Sciences</div>
+                  <div class="dd-loc">📍 Port Blair, Andaman and Nicobar Islands</div>
+                </div>
+                <span class="dd-badge">ANII</span>
+              </li> -->
+              <li data-name="IIT Tirupati">
+                <div>
+                  <div class="dd-name">IIT Tirupati</div>
+                  <div class="dd-loc">📍 Tirupati, Andhra Pradesh</div>
+                </div>
+                <span class="dd-badge">IITTP</span>
+              </li>
+              <li data-name="IIT Bombay">
+                <div>
+                  <div class="dd-name">IIT Bombay</div>
+                  <div class="dd-loc">📍 Mumbai, Maharashtra</div>
+                </div>
+                <span class="dd-badge">IITB</span>
+              </li>
+              <li data-name="Delhi University">
+                <div>
+                  <div class="dd-name">Delhi University</div>
+                  <div class="dd-loc">📍 New Delhi, Delhi</div>
+                </div>
+                <span class="dd-badge">DU</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="stat-pill"><b class="c-white">4 Lakh<span class="c-red">+</span></b> Student Reviews</div>
+        <div class="stat-pill"><b class="c-white">25000+</b> Verified Colleges</div>
+        <div class="stat-pill"><b class="c-white">98.4<span class="c-red">%</span></b> Admission Success</div>
+      </div>
+
+      <a href="#" class="btn-need">Need Counselling</a>
+    </div>
+
+    <!-- Slider dots -->
+    <div class="container">
+      <div class="slider-ctrl">
+        <div class="dots" id="dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <span class="slide-count" id="slideCount">1 / 3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUDY GOAL ================= -->
+<section class="goal-section">
+  <div class="container">
+    <h2 class="goal-heading">Select Your Study Goal</h2>
+
+    <div class="row g-3">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-gear-wide-connected"></i></div>
+            <div>
+              <h3 class="goal-name">Engineering</h3>
+              <div class="goal-count">6437 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">BE/B.Tech</a></li>
+            <li><a href="#">Diploma in Engineering</a></li>
+            <li><a href="#">ME/M.Tech</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h3 class="goal-name">Management</h3>
+              <div class="goal-count">8109 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">MBA/PGDM</a></li>
+            <li><a href="#">BBA/BMS</a></li>
+            <li><a href="#">Executive MBA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-currency-rupee"></i></div>
+            <div>
+              <h3 class="goal-name">Commerce</h3>
+              <div class="goal-count">5118 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">B.Com</a></li>
+            <li><a href="#">M.Com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-palette2"></i></div>
+            <div>
+              <h3 class="goal-name">Arts &amp; Science</h3>
+              <div class="goal-count">5763 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">BA</a></li>
+            <li><a href="#">MA</a></li>
+            <li><a href="#">B.Sc</a></li>
+            <li><a href="#">M.Sc</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-vector-pen"></i></div>
+            <div>
+              <h3 class="goal-name">Design</h3>
+              <div class="goal-count">1492 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">B.Des</a></li>
+            <li><a href="#">M.Des</a></li>
+            <li><a href="#">B.FTech</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-building"></i></div>
+            <div>
+              <h3 class="goal-name">Architecture</h3>
+              <div class="goal-count">920 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">B.Arch</a></li>
+            <li><a href="#">M.Arch</a></li>
+            <li><a href="#">B.Planning</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-capsule"></i></div>
+            <div>
+              <h3 class="goal-name">Pharmacy</h3>
+              <div class="goal-count">2100 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">B.Pharm</a></li>
+            <li><a href="#">M.Pharm</a></li>
+            <li><a href="#">D.Pharm</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="goal-card">
+          <div class="goal-head">
+            <div class="goal-icon"><i class="bi bi-cup-hot"></i></div>
+            <div>
+              <h3 class="goal-name">Hotel Management</h3>
+              <div class="goal-count">780 Colleges</div>
+            </div>
+          </div>
+          <ul class="goal-list">
+            <li><a href="#">B.Sc HHA</a></li>
+            <li><a href="#">BHM</a></li>
+            <li><a href="#">Diploma in HM</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ================= COLLEGE CARDS ================= -->
+  <section class="colleges-section">
+    <div class="container">
+        <h3>Top Universities/Colleges</h3>
+      <!-- cards yahan JS se aayenge (3 column x 4 row = 12 per page) -->
+      <div class="row g-4" id="collegeGrid"></div>
+
+      <!-- Pagination -->
+      <div class="pager" id="pager">
+        <button class="pager-btn" id="prevBtn">&larr; Prev</button>
+        <span class="pager-info">Page <b id="curPage">1</b> of <span id="totalPages">1</span></span>
+        <button class="pager-btn" id="nextBtn">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOP 10 COLLEGES ================= -->
+<section class="top-section">
+  <div class="container">
+    <h2 class="top-heading">Top 10 Colleges</h2>
+
+    <!-- Filter tabs -->
+    <div class="top-tabs" id="topTabs" style="display: flex; justify-content: center; align-items: center;">
+      <button class="top-tab active" data-course="btech">B.Tech</button>
+      <button class="top-tab" data-course="mba">MBA</button>
+      <button class="top-tab" data-course="bcom">B.Com</button>
+      <button class="top-tab" data-course="bsc">B.Sc</button>
+      <button class="top-tab" data-course="ba">BA</button>
+      <button class="top-tab" data-course="bba">BBA</button>
+      <button class="top-tab" data-course="bca">BCA</button>
+    </div>
+
+    <!-- Table -->
+    <div class="top-table-wrap">
+      <div class="table-responsive">
+        <table class="top-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>College</th>
+              <th>Ranking</th>
+              <th>Cutoff</th>
+              <th>Application Deadline</th>
+              <th>Total Fees</th>
+            </tr>
+          </thead>
+          <tbody id="topBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPLORE COURSES ================= -->
+<section class="ec-section">
+  <div class="container">
+    <h2 class="ec-heading">Explore Courses</h2>
+
+    <div class="row g-3">
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">BE / B.Tech</h3>
+            <span class="ec-badge">4,285 Colleges</span>
+          </div>
+          <div class="ec-meta">4 Years · ₹1.5L – ₹12L /yr</div>
+          <p class="ec-desc">Bachelor of Engineering/Technology is India's most sought-after UG degree covering CS, ECE, Mechanical, Civil, Chemical and more.</p>
+          <div class="ec-exam">Top Exam: JEE Advanced / JEE Main / BITSAT / VITEEE / WBJEE</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">ME / M.Tech</h3>
+            <span class="ec-badge">2,802 Colleges</span>
+          </div>
+          <div class="ec-meta">2 Years · ₹0.8L – ₹5L /yr</div>
+          <p class="ec-desc">Master of Engineering/Technology is a 2-year PG programme focused on advanced engineering. GATE-qualified students can apply to top institutes.</p>
+          <div class="ec-exam">Top Exam: GATE / TANCET / MH CET</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">BCA</h3>
+            <span class="ec-badge">3,725 Colleges</span>
+          </div>
+          <div class="ec-meta">3 Years · ₹0.8L – ₹4L /yr</div>
+          <p class="ec-desc">Bachelor of Computer Applications is a 3-year UG degree focused on programming, DBMS, networking and software development.</p>
+          <div class="ec-exam">Top Exam: CUET / IPU CET / GGSIPU / MH CET</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">MCA</h3>
+            <span class="ec-badge">1,800+ Colleges</span>
+          </div>
+          <div class="ec-meta">2 Years · ₹1L – ₹5L /yr</div>
+          <p class="ec-desc">Master of Computer Applications is a 2-year PG IT programme equivalent to M.Tech in industry value.</p>
+          <div class="ec-exam">Top Exam: NIMCET / TANCET / JNU MCA / IPU CET</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">MBA / PGDM</h3>
+            <span class="ec-badge">5,190 Colleges</span>
+          </div>
+          <div class="ec-meta">2 Years · ₹2L – ₹40L total</div>
+          <p class="ec-desc">Master of Business Administration is the gateway to leadership roles in India and abroad.</p>
+          <div class="ec-exam">Top Exam: CAT / XAT / MAT / GMAT / CMAT</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">BBA / BMS</h3>
+            <span class="ec-badge">4,377 Colleges</span>
+          </div>
+          <div class="ec-meta">3 Years · ₹1L – ₹7.65L /yr</div>
+          <p class="ec-desc">Bachelor of Business Administration provides an early start to management education.</p>
+          <div class="ec-exam">Top Exam: IPMAT / CUET / SET / Christ Entrance</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">Executive MBA</h3>
+            <span class="ec-badge">500+ Colleges</span>
+          </div>
+          <div class="ec-meta">1-2 Years · ₹10L – ₹35L total</div>
+          <p class="ec-desc">Executive MBA is designed for working professionals with significant experience.</p>
+          <div class="ec-exam">Top Exam: GMAT / GEMAT / CMAT</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">B.Pharm / M.Pharm</h3>
+            <span class="ec-badge">1,400+ Colleges</span>
+          </div>
+          <div class="ec-meta">4 Years · ₹0.5L – ₹4L /yr</div>
+          <p class="ec-desc">B.Pharm is a 4-year UG science degree focused on drug formulations, clinical pharmacology and pharmaceutical sciences.</p>
+          <div class="ec-exam">Top Exam: GPAT / MH CET Pharmacy / UPSEE Pharmacy</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">BA (Hons.)</h3>
+            <span class="ec-badge">4,556 Colleges</span>
+          </div>
+          <div class="ec-meta">3 Years · ₹0.4L – ₹2L /yr</div>
+          <p class="ec-desc">Bachelor of Arts is India's most diverse UG degree covering humanities and social sciences.</p>
+          <div class="ec-exam">Top Exam: CUET UG / DU JAT / Merit</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">MA</h3>
+            <span class="ec-badge">2,000+ Colleges</span>
+          </div>
+          <div class="ec-meta">2 Years · ₹0.3L – ₹1.5L /yr</div>
+          <p class="ec-desc">Master of Arts opens doors to UGC-NET, civil services, research and academia.</p>
+          <div class="ec-exam">Top Exam: CUET PG / JNU Entrance / DU Entrance</div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <a href="#" class="ec-card">
+          <div class="ec-top">
+            <h3 class="ec-title">B.Com / B.Com (Hons.)</h3>
+            <span class="ec-badge">4,708 Colleges</span>
+          </div>
+          <div class="ec-meta">3 Years · ₹0.5L – ₹3L /yr</div>
+          <p class="ec-desc">B.Com is the foundation for CA, CS, CMA, MBA Finance and banking careers.</p>
+          <div class="ec-exam">Top Exam: CUET UG / Merit / Christ / Symbiosis SET</div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="nl-section">
+  <div class="container text-center">
+    <h2 class="nl-heading">Subscribe To Our News Letter</h2>
+    <p class="nl-sub">Get College Notifications, Exam Notifications and News Updates</p>
+
+    <form class="nl-form" id="nlForm" novalidate>
+      <div class="nl-field">
+        <i class="bi bi-envelope"></i>
+        <input type="email" id="nlEmail" placeholder="Enter your email id">
+      </div>
+
+      <div class="nl-field">
+        <i class="bi bi-telephone"></i>
+        <input type="tel" id="nlMobile" placeholder="Enter your mobile no" maxlength="10">
+      </div>
+
+      <div class="nl-field nl-select">
+        <select id="nlCourse">
+          <option value="">Choose your course</option>
+          <option>B.Tech</option>
+          <option>M.Tech</option>
+          <option>MBA</option>
+          <option>BBA</option>
+          <option>BCA</option>
+          <option>MCA</option>
+          <option>B.Com</option>
+          <option>B.Sc</option>
+          <option>BA</option>
+          <option>B.Pharm</option>
+        </select>
+      </div>
+
+      <button type="submit" class="nl-btn">Submit</button>
+    </form>
+
+    <p class="nl-msg" id="nlMsg"></p>
+  </div>
+</section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+
+    <!-- Link columns -->
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <h6 class="footer-title">Top Colleges</h6>
+            <ul class="footer-links">
+              <li><a href="#">M.B.A</a></li>
+              <li><a href="#">B.Tech/B.E</a></li>
+              <li><a href="#">MCA</a></li>
+              <li><a href="#">BCA</a></li>
+              <!-- <li><a href="#">M.Tech</a></li> -->
+              <li><a href="#">MA</a></li>
+              <li><a href="#">BA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6 class="footer-title">Top Universities</h6>
+            <ul class="footer-links">
+              <li><a href="#">Engineering</a></li>
+              <li><a href="#">Management</a></li>
+              <!-- <li><a href="#">Medical</a></li> -->
+              <li><a href="#">Law</a></li>
+              <li><a href="#">Commerce</a></li>
+              <li><a href="#">Science</a></li>
+              <li><a href="#">Arts</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6 class="footer-title">Top Exam</h6>
+            <ul class="footer-links">
+              <li><a href="#">CAT</a></li>
+              <li><a href="#">JEE Main</a></li>
+              <!-- <li><a href="#">NEET UG</a></li> -->
+              <li><a href="#">XAT</a></li>
+              <li><a href="#">CLAT</a></li>
+              <li><a href="#">MAT</a></li>
+              <li><a href="#">All Exams</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <h6 class="footer-title">Board Exams</h6>
+            <ul class="footer-links">
+              <li><a href="#">CBSE Class 12</a></li>
+              <li><a href="#">CBSE Class 12th Results</a></li>
+              <li><a href="#">CBSE Class 12th Syllabus</a></li>
+              <li><a href="#">CBSE Class 12th Exam Dates</a></li>
+              <li><a href="#">CBSE Class 10</a></li>
+              <li><a href="#">CBSE Class 10th Result</a></li>
+              <li><a href="#">CBSE Class 10th Syllabus</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other links + social -->
+    <div class="footer-other">
+      <div class="container footer-other-inner">
+        <div>
+          <h6 class="footer-title mb-2">Other Links</h6>
+          <div class="footer-inline">
+            <a href="#">About College </a>
+            <!-- <a href="#">About</a> -->
+            <a href="#">Contact Us</a>
+            <a href="#">Feedback</a>
+            <a href="#" >Advertising</a>
+            <a href="#">Career</a>
+            <a href="#">Terms &amp; Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <a href="#" class="brand footer-brand">
+          <i class="bi bi-mortarboard-fill brand-icon"></i>
+          <span>College </span>
+        </a>
+        <span class="copyright">© 2026 College . All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
